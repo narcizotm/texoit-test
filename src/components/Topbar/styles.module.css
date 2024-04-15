@@ -1,0 +1,9 @@
+.topbar {
+  background-color: #3e3e3d;
+  height: 40px;
+}
+
+.topbarTitle {
+  padding: 10px 15px;
+  color:#ffffff
+}
