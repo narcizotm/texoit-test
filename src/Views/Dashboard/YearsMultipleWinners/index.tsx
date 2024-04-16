@@ -9,21 +9,21 @@ interface MultipleWinners {
 }
 
 const YearsMultipleWinners = () => {
-  const [movies, setMovies] = useState<MultipleWinners[]>([]);
+  const [winners, setWinners] = useState<MultipleWinners[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchWinners = async () => {
       setIsLoading(true);
       const response = await fetch(
         `${API_URL}?projection=years-with-multiple-winners`
       );
-      const movies = await response.json();
-      setMovies(movies.years as MultipleWinners[]);
+      const winners = await response.json();
+      setWinners(winners.years as MultipleWinners[]);
       setIsLoading(false);
     };
 
-    fetchMovies();
+    fetchWinners();
   }, []);
 
   return (
@@ -32,7 +32,7 @@ const YearsMultipleWinners = () => {
       <Card.Body>
         {isLoading ? (
           <p>carregando...</p>
-        ) : Array.isArray(movies) ? (
+        ) : Array.isArray(winners) ? (
           <Table striped bordered hover>
             <thead>
               <tr>
@@ -41,11 +41,11 @@ const YearsMultipleWinners = () => {
               </tr>
             </thead>
             <tbody>
-              {movies.map((movie, index) => {
+              {winners.map((winner, index) => {
                 return (
                   <tr key={index}>
-                    <td>{movie.year}</td>
-                    <td>{movie.winnerCount}</td>
+                    <td>{winner.year}</td>
+                    <td>{winner.winnerCount}</td>
                   </tr>
                 );
               })}
