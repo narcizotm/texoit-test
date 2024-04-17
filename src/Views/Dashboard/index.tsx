@@ -7,7 +7,7 @@ import MovieWinnersByYear from "./ListMovieWinnersByYear";
 const Dashboard = () => {
   return (
     <div>
-      <Container>
+      <Container fluid>
         <Row className="mx-2">
           <Col md="6">
             <YearsMultipleWinners />
