@@ -38,24 +38,22 @@ const MovieWinnersByYear = () => {
     <Card className="mt-3">
       <Card.Title className="m-3">List movie winners by year</Card.Title>
       <Card.Body>
-        <Form>
-          <Form.Group className="mb-4">
-            <InputGroup>
-              <Form.Control
-                type="number"
-                id="search"
-                name="search"
-                placeholder="Search by year"
-                value={search}
-                onChange={onChangeInputSearch}
-              />
+        <Form.Group className="mb-4">
+          <InputGroup>
+            <Form.Control
+              type="number"
+              id="search"
+              name="search"
+              placeholder="Search by year"
+              value={search}
+              onChange={onChangeInputSearch}
+            />
 
-              <Button onClick={onClickSearch} disabled={search?.length != 4}>
-                <Search />
-              </Button>
-            </InputGroup>
-          </Form.Group>
-        </Form>
+            <Button onClick={onClickSearch} disabled={search?.length != 4}>
+              <Search />
+            </Button>
+          </InputGroup>
+        </Form.Group>
 
         {isLoading ? (
           <p>Loading...</p>
@@ -81,7 +79,14 @@ const MovieWinnersByYear = () => {
                 })}
               </tbody>
             </Table>
-          ) : searched ? <p>No movies were found for the searched year</p> : <p>Type a four-digit year in the field above and click the search button</p>
+          ) : searched ? (
+            <p>No movies were found for the searched year</p>
+          ) : (
+            <p>
+              Type a four-digit year in the field above and click the search
+              button
+            </p>
+          )
         ) : (
           <p className="text-danger">Unable to list information</p>
         )}
