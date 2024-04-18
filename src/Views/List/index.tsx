@@ -49,6 +49,7 @@ const List = () => {
 
     if (search.length === 4) {
       setSearchByYear(`&year=${search}`);
+      setPage(0);
     } else {
       setSearchByYear("");
     }
@@ -61,6 +62,7 @@ const List = () => {
 
     if (search === "true" || search === "false") {
       setSearchByWinner(`&winner=${search}`);
+      setPage(0);
     } else {
       setSearchByWinner("");
     }
@@ -105,14 +107,12 @@ const List = () => {
                     <th>ID</th>
                     <th>
                       Year
-                      <div>
-                        <Form.Control
-                          name="yearSearch"
-                          value={yearSearch}
-                          onChange={onChangeSearchByYear}
-                          placeholder="Filter by year"
-                        />
-                      </div>
+                      <Form.Control
+                        name="yearSearch"
+                        value={yearSearch}
+                        onChange={onChangeSearchByYear}
+                        placeholder="Filter by year"
+                      />
                     </th>
                     <th>Title</th>
                     <th>
@@ -132,7 +132,7 @@ const List = () => {
                 <tbody>
                   {isLoading ? (
                     <div style={{ height: "670px" }}>
-                      <p>carregando...</p>
+                      <p>loading...</p>
                     </div>
                   ) : Array.isArray(movies) ? (
                     movies.map((movie) => {
@@ -147,7 +147,7 @@ const List = () => {
                     })
                   ) : (
                     <p className="text-danger">
-                      Não foi possível listar as informações
+                      Unable to list information
                     </p>
                   )}
                 </tbody>
@@ -195,7 +195,7 @@ const List = () => {
               </div>
             ) : (
               <div className="d-flex align-items-baseline ">
-                <p className="me-3">No movies found</p>
+                <p className="me-3">No movies were found</p>
                 <Button
                   variant="primary"
                   size="sm"
