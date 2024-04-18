@@ -4,7 +4,7 @@ import ProducersIntervalsBetweenWins from ".";
 
 test("render component", () => {
   render(<ProducersIntervalsBetweenWins/>);
-  const titleElement = screen.getByText("Producers With Longest And Shortest Interval Between Wins");
+  const titleElement = screen.getByText("Producers with longest and shortest interval between wins");
   expect(titleElement).toBeInTheDocument();
 });
 

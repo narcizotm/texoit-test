@@ -10,7 +10,7 @@ import MovieWinnersByYear from ".";
 
 test("render component", () => {
   render(<MovieWinnersByYear />);
-  const titleElement = screen.getByText("List Movie Winners By Year");
+  const titleElement = screen.getByText("List movie winners by year");
   expect(titleElement).toBeInTheDocument();
 });
 
