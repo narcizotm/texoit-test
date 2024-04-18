@@ -19,19 +19,19 @@ test("show search by year", async () => {
   const searchInput = screen.getByPlaceholderText(
     "Search by year"
   ) as HTMLInputElement;
+
   fireEvent.change(searchInput, { target: { value: "1999" } });
-  expect(searchInput.value).toBe("1999");
+  await waitFor(() => {
+    expect(searchInput.value).toBe("1999");
+  });
 
   const submitSearch = screen.getByRole("button");
   fireEvent.click(submitSearch);
 
-  await waitFor(() => {
-    const table = screen.getByRole("table");
-    const tbody = within(table).getAllByRole("rowgroup")[1];
-    const rows = within(tbody).getAllByRole("row");
-
-    checkRowContents(rows[0], "101", "1999", "Wild Wild West");
-  });
+  const table = await screen.findByRole("table");
+  const tbody = within(table).getAllByRole("rowgroup")[1];
+  const rows = within(tbody).getAllByRole("row");
+  checkRowContents(rows[0], "101", "1999", "Wild Wild West");
 });
 
 function checkRowContents(row: any, id: string, year: string, title: string) {

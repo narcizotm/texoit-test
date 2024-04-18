@@ -3,7 +3,7 @@ import "./App.css";
 import TheRouter from "./TheRouter";
 import Dashboard from "./Views/Dashboard";
 import PageNotFound from "./Views/PageNotFound";
-import List from "./Views/List";
+import MoviesList from "./Views/MoviesList";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,7 +18,7 @@ function App() {
         },
         {
           path: "/list",
-          element: <List />,
+          element: <MoviesList />,
         },
       ],
     },

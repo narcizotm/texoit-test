@@ -19,7 +19,7 @@ interface Movies {
   winner: boolean;
 }
 
-const List = () => {
+const MoviesList = () => {
   const [movies, setMovies] = useState<Movies[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [yearSearch, setYearSearch] = useState<string>("");
@@ -98,7 +98,7 @@ const List = () => {
     <Container fluid className="p-2">
       <Row className="m-3">
         <Card>
-          <Card.Title className="m-3">List Movies</Card.Title>
+          <Card.Title className="m-3">List movies</Card.Title>
           <Card.Body>
             <div>
               <Table striped bordered hover className={styles.tableListMovies}>
@@ -212,4 +212,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default MoviesList;
