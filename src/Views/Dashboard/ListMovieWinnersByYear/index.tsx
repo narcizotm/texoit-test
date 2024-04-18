@@ -36,7 +36,7 @@ const MovieWinnersByYear = () => {
   console.log(search);
   return (
     <Card className="mt-3">
-      <Card.Title className="m-3">List Movie Winners By Year</Card.Title>
+      <Card.Title className="m-3">List movie winners by year</Card.Title>
       <Card.Body>
         <Form>
           <Form.Group className="mb-4">
@@ -58,7 +58,7 @@ const MovieWinnersByYear = () => {
         </Form>
 
         {isLoading ? (
-          <p>carregando...</p>
+          <p>Loading...</p>
         ) : Array.isArray(winners) ? (
           winners.length > 0 ? (
             <Table striped bordered hover>
@@ -81,9 +81,9 @@ const MovieWinnersByYear = () => {
                 })}
               </tbody>
             </Table>
-          ) : searched ? <p>Nenhum filme foi encontrado para o ano pesquisado</p> : <p>Digite um ano com quatro dígitos no campo acima e clique no botão pesquisar</p>
+          ) : searched ? <p>No movies were found for the searched year</p> : <p>Type a four-digit year in the field above and click the search button</p>
         ) : (
-          <p className="text-danger">Não foi possível listar as informações</p>
+          <p className="text-danger">Unable to list information</p>
         )}
       </Card.Body>
     </Card>

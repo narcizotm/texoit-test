@@ -28,10 +28,10 @@ const Top3StudiosWinners = () => {
 
   return (
     <Card className="mt-3">
-      <Card.Title className="m-3">Top 3 Studios With Winners</Card.Title>
+      <Card.Title className="m-3">Top 3 studios with winners</Card.Title>
       <Card.Body>
         {isLoading ? (
-          <p>carregando...</p>
+          <p>loading...</p>
         ) : Array.isArray(winners) ? (
           <Table striped bordered hover>
             <thead>
@@ -55,7 +55,7 @@ const Top3StudiosWinners = () => {
             </tbody>
           </Table>
         ) : (
-          <p className="text-danger">Não foi possível listar as informações</p>
+          <p className="text-danger">Unable to list information</p>
         )}
       </Card.Body>
     </Card>

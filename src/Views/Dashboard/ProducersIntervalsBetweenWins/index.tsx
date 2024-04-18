@@ -34,14 +34,14 @@ const ProducersIntervalsBetweenWins = () => {
   return (
     <Card className="mt-3">
       <Card.Title className="m-3">
-        Producers With Longest And Shortest Interval Between Wins
+        Producers with longest and shortest interval between wins
       </Card.Title>
       <Card.Body>
         <h3>Maximum</h3>
         {isLoading ? (
-          <p>carregando...</p>
+          <p>loading...</p>
         ) : Array.isArray(longestInterval) ? (
-          <Table striped bordered hover className={styles.tableInterval}>
+          <Table striped bordered hover className={styles.tableInterval} title="longestInterval">
             <thead>
               <tr>
                 <th>Producer</th>
@@ -64,14 +64,14 @@ const ProducersIntervalsBetweenWins = () => {
             </tbody>
           </Table>
         ) : (
-          <p className="text-danger">Não foi possível listar as informações</p>
+          <p className="text-danger">Unable to list information</p>
         )}
 
         <h3>Minimum</h3>
         {isLoading ? (
-          <p>carregando...</p>
+          <p>loading...</p>
         ) : Array.isArray(shortestInterval) ? (
-          <Table striped bordered hover className={styles.tableInterval}>
+          <Table striped bordered hover className={styles.tableInterval} title="shortestInterval">
             <thead>
               <tr>
                 <th>Producer</th>
@@ -94,7 +94,7 @@ const ProducersIntervalsBetweenWins = () => {
             </tbody>
           </Table>
         ) : (
-          <p className="text-danger">Não foi possível listar as informações</p>
+          <p className="text-danger">Unable to list information</p>
         )}
       </Card.Body>
     </Card>

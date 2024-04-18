@@ -14,7 +14,7 @@ test("render component", () => {
   expect(titleElement).toBeInTheDocument();
 });
 
-test("search", async () => {
+test("show search by year", async () => {
   render(<MovieWinnersByYear />);
   const searchInput = screen.getByPlaceholderText(
     "Search by year"

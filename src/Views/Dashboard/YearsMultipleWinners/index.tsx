@@ -31,7 +31,7 @@ const YearsMultipleWinners = () => {
       <Card.Title className="m-3">List years with multiple winners</Card.Title>
       <Card.Body>
         {isLoading ? (
-          <p>carregando...</p>
+          <p>loading...</p>
         ) : Array.isArray(winners) ? (
           <Table striped bordered hover>
             <thead>
@@ -52,7 +52,7 @@ const YearsMultipleWinners = () => {
             </tbody>
           </Table>
         ) : (
-          <p className="text-danger">Não foi possível listar as informações</p>
+          <p className="text-danger">Unable to list information</p>
         )}
       </Card.Body>
     </Card>
